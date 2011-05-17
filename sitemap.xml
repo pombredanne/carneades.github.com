@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://carneades.berlios.de/index.html</loc>
+		<loc>http://carneades.github.com/index.html</loc>
 		<lastmod>2011-05-17</lastmod>
 	</url>
 	<url>
-		<loc>http://carneades.berlios.de/contact/index.php</loc>
+		<loc>http://carneades.github.com/styled/index.html</loc>
 		<lastmod>2011-05-17</lastmod>
 	</url>
 	<url>
-		<loc>http://carneades.berlios.de/changes/index.html</loc>
+		<loc>http://carneades.github.com/changes/index.html</loc>
 		<lastmod>2011-05-17</lastmod>
 	</url>
 	<url>
-		<loc>http://carneades.berlios.de/examples/index.html</loc>
+		<loc>http://carneades.github.com/examples/index.html</loc>
 		<lastmod>2011-05-17</lastmod>
 	</url>
 	<url>
-		<loc>http://carneades.berlios.de/page2/page2.html</loc>
+		<loc>http://carneades.github.com/page2/page2.html</loc>
 		<lastmod>2011-05-17</lastmod>
 	</url>
 </urlset>
