@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html><head><link href="css/default.css" rel="stylesheet" type="text/css"><script src="js/jquery.min.js" type="text/javascript"></script><script src="js/page_effects.js" type="text/javascript"></script><title>carneades.engine.dnf documentation</title></head><body><div id="header"><h1><a href="index.html">Carneades-engine 2.0.0-SNAPSHOT API documentation</a></h1></div><div class="sidebar" id="namespaces"><h3><span>Namespaces</span></h3><ul><li><a href="carneades.config.reader.html"><span>carneades.config.reader</span></a></li><li><a href="carneades.database.admin.html"><span>carneades.database.admin</span></a></li><li><a href="carneades.database.db.html"><span>carneades.database.db</span></a></li><li><a href="carneades.database.export.html"><span>carneades.database.export</span></a></li><li><a href="carneades.database.import.html"><span>carneades.database.import</span></a></li><li><a href="carneades.engine.argument.html"><span>carneades.engine.argument</span></a></li><li><a href="carneades.engine.argument-builtins.html"><span>carneades.engine.argument-builtins</span></a></li><li><a href="carneades.engine.argument-construction.html"><span>carneades.engine.argument-construction</span></a></li><li><a href="carneades.engine.argument-evaluation.html"><span>carneades.engine.argument-evaluation</span></a></li><li><a href="carneades.engine.argument-generator.html"><span>carneades.engine.argument-generator</span></a></li><li><a href="carneades.engine.argument-graph.html"><span>carneades.engine.argument-graph</span></a></li><li><a href="carneades.engine.ask.html"><span>carneades.engine.ask</span></a></li><li><a href="carneades.engine.aspic.html"><span>carneades.engine.aspic</span></a></li><li><a href="carneades.engine.caes.html"><span>carneades.engine.caes</span></a></li><li><a href="carneades.engine.dialog.html"><span>carneades.engine.dialog</span></a></li><li class="current"><a href="carneades.engine.dnf.html"><span>carneades.engine.dnf</span></a></li><li><a href="carneades.engine.dublin-core.html"><span>carneades.engine.dublin-core</span></a></li><li><a href="carneades.engine.dung.html"><span>carneades.engine.dung</span></a></li><li><a href="carneades.engine.policy.html"><span>carneades.engine.policy</span></a></li><li><a href="carneades.engine.sandbox.html"><span>carneades.engine.sandbox</span></a></li><li><a href="carneades.engine.scheme.html"><span>carneades.engine.scheme</span></a></li><li><a href="carneades.engine.search.html"><span>carneades.engine.search</span></a></li><li><a href="carneades.engine.shell.html"><span>carneades.engine.shell</span></a></li><li><a href="carneades.engine.statement.html"><span>carneades.engine.statement</span></a></li><li><a href="carneades.engine.unify.html"><span>carneades.engine.unify</span></a></li><li><a href="carneades.engine.utils.html"><span>carneades.engine.utils</span></a></li><li><a href="carneades.engine.uuid.html"><span>carneades.engine.uuid</span></a></li><li><a href="carneades.maps.format-statement.html"><span>carneades.maps.format-statement</span></a></li><li><a href="carneades.maps.lacij.html"><span>carneades.maps.lacij</span></a></li><li><a href="carneades.maps.lacij-export.html"><span>carneades.maps.lacij-export</span></a></li><li><a href="carneades.maps.lacij-params.html"><span>carneades.maps.lacij-params</span></a></li><li><a href="carneades.maps.subset-ag.html"><span>carneades.maps.subset-ag</span></a></li><li><a href="carneades.xml.caf.export.html"><span>carneades.xml.caf.export</span></a></li><li><a href="carneades.xml.lkif.export.html"><span>carneades.xml.lkif.export</span></a></li><li><a href="carneades.xml.lkif.validator.html"><span>carneades.xml.lkif.validator</span></a></li></ul></div><div class="sidebar" id="vars"><h3>Public Vars</h3><ul><li><a href="carneades.engine.dnf.html#var-associative-conversion"><span>associative-conversion</span></a></li><li><a href="carneades.engine.dnf.html#var-assumption%3F"><span>assumption?</span></a></li><li><a href="carneades.engine.dnf.html#var-atom%3F"><span>atom?</span></a></li><li><a href="carneades.engine.dnf.html#var-con-flatten"><span>con-flatten</span></a></li><li><a href="carneades.engine.dnf.html#var-conjunction%3F"><span>conjunction?</span></a></li><li><a href="carneades.engine.dnf.html#var-dis-flatten"><span>dis-flatten</span></a></li><li><a href="carneades.engine.dnf.html#var-disjunction%3F"><span>disjunction?</span></a></li><li><a href="carneades.engine.dnf.html#var-distri"><span>distri</span></a></li><li><a href="carneades.engine.dnf.html#var-distributive-conversion"><span>distributive-conversion</span></a></li><li><a href="carneades.engine.dnf.html#var-dnf%3F"><span>dnf?</span></a></li><li><a href="carneades.engine.dnf.html#var-equivalence-conversion"><span>equivalence-conversion</span></a></li><li><a href="carneades.engine.dnf.html#var-equivalence%3F"><span>equivalence?</span></a></li><li><a href="carneades.engine.dnf.html#var-exception%3F"><span>exception?</span></a></li><li><a href="carneades.engine.dnf.html#var-extliteral%3F"><span>extliteral?</span></a></li><li><a href="carneades.engine.dnf.html#var-extliterals*%3F"><span>extliterals*?</span></a></li><li><a href="carneades.engine.dnf.html#var-formula%3F"><span>formula?</span></a></li><li><a href="carneades.engine.dnf.html#var-formulas*%3F"><span>formulas*?</span></a></li><li><a href="carneades.engine.dnf.html#var-implication-conversion"><span>implication-conversion</span></a></li><li><a href="carneades.engine.dnf.html#var-implication%3F"><span>implication?</span></a></li><li><a href="carneades.engine.dnf.html#var-lconjunction%3F"><span>lconjunction?</span></a></li><li><a href="carneades.engine.dnf.html#var-literal%3F"><span>literal?</span></a></li><li><a href="carneades.engine.dnf.html#var-literals*%3F"><span>literals*?</span></a></li><li><a href="carneades.engine.dnf.html#var-negate"><span>negate</span></a></li><li><a href="carneades.engine.dnf.html#var-negation-conversion"><span>negation-conversion</span></a></li><li><a href="carneades.engine.dnf.html#var-negation%3F"><span>negation?</span></a></li></ul></div><div class="namespace-docs" id="content"><h2>carneades.engine.dnf documentation</h2><pre class="doc">This library is implemented to convert every logical formula into an
+equivalent 'disjunctive normalform' (DNF). A DNF is a disjunction of a
+conjunction of literals.
+
+WARNING:  This code is currently not used elsewhere in the Carneades engine.
+The old rule module, which used this code, has been replaced by the new
+scheme module.  Currently schemes are defined using Clojure records.  No
+macros have been defined for a higher-level rule language.  Should the need
+arise for a more user friendly, higher-level DSL, this DNF code could be useful.
+
+You can find a more detailed, that is a more mathematic, description of
+logical formulas below.
+
+DNF is the only way, the 'rule'-library can handle logical formulas.
+To support every valid formula, it is converted, before used.
+The algorithm used to convert the formulas to DNF runs through two main
+steps:
+  - negations are only allowed before atoms (only in literals)
+      (not (not t1)) -&gt; t1
+      (not (and t1 t2) -&gt; (or (not t1) (not t2))
+      (not (or t1 t2) -&gt; (and (not t1) (not t2))
+  - usage of distributivity to bring inner disjunctions to an outer level
+      (and t1 (or t2 t3)) -&gt; (or (and t1 t2) (and t1 t3))
+      (and (or t1 t2) t3) -&gt; (or (and t1 t3) (and t2 t3))
+Before these steps could be run through, equivalences have to be substituted
+for implications, which themselves have to be substituted for disjunctions.
+You do not need to care, if you only use the 'to-dnf' method.
+
+The library was extended to the use of the predicates 'assuming' and
+'unless'.
+These extensions were made in order to distinguish special rules for burden
+of proof.
+Throughout the conversions the predicates are handled as identity and
+negation.
+
+!!! BEWARE !!!
+Worst case conversion includes exponential time complexity. For example,
+a conversion from CNF to DNF with n variables could induce 2^n operations.
+As this library is especially designed for the 'rules'-library and these
+rules won't be too long, this is ok for 'carneades' to still run quick.
+
+
+&lt;atom&gt;            
+&lt;literal&gt; = &lt;atom&gt; | (not &lt;atom&gt;)
+&lt;assumption&gt; = (assuming &lt;literal&gt;)
+&lt;exception&gt; = (unless &lt;literal&gt;)
+
+extended literals
+&lt;extliteral&gt; = &lt;literal&gt; | &lt;assumption&gt; | &lt;exception&gt;                
+&lt;negation&gt; = (not &lt;formula&gt;)
+pure conjunction
+
+conjunctions of extended literals
+&lt;conjunction&gt; = (and &lt;formula&gt; &lt;formula&gt;+)                           
+&lt;lconjunction&gt; = &lt;extliteral&gt; | (and &lt;extliteral&gt; &lt;extliteral&gt;+)     
+
+pure disjunction
+&lt;disjunction&gt; = (or &lt;formula&gt; &lt;formula&gt;+)                           
+&lt;implication&gt; = (if &lt;formula&gt; &lt;formula&gt;)
+&lt;equivalence&gt; = (iff &lt;formula&gt; &lt;formula&gt;)
+
+disjunctive normalform
+&lt;dnf&gt; = &lt;lconjunction&gt; | (or &lt;lconjunction&gt; &lt;lconjunction&gt;+)          
+&lt;formula&gt; = &lt;extliteral&gt; | &lt;conjunction&gt; | &lt;disjunction&gt; | &lt;negation&gt;
+| &lt;implication&gt; | &lt;equivalence&gt;
+
+predicates </pre><div class="public" id="var-associative-conversion"><h3>associative-conversion</h3><div class="usage"><code>(associative-conversion formula)</code></div><pre class="doc">formula -&gt; formula
+
+uses associative law to simplify nested conjunctions and disjunctions to 
+lists
+</pre></div><div class="public" id="var-assumption%3F"><h3>assumption?</h3><div class="usage"><code>(assumption? formula)</code></div><pre class="doc">Returns true if the formula is an assumption
+</pre></div><div class="public" id="var-atom%3F"><h3>atom?</h3><div class="usage"><code>(atom? formula)</code></div><pre class="doc">Returns true if the formula is an atom
+</pre></div><div class="public" id="var-con-flatten"><h3>con-flatten</h3><div class="usage"><code>(con-flatten formulas)</code></div><pre class="doc">Gets a list of formulas, which are originally operands of a conjunction
+returns a list of formulas, in which no formula is a conjunction
+formulas, who were conjunctions, were substituted for their operands</pre></div><div class="public" id="var-conjunction%3F"><h3>conjunction?</h3><div class="usage"><code>(conjunction? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-dis-flatten"><h3>dis-flatten</h3><div class="usage"><code>(dis-flatten formulas)</code></div><pre class="doc">Gets a list of formulas, which are originally operands of a disjunction
+returns a list of formulas, in which no formula is a disjunction
+formulas, who were disjunctions, were substituted for their operands</pre></div><div class="public" id="var-disjunction%3F"><h3>disjunction?</h3><div class="usage"><code>(disjunction? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-distri"><h3>distri</h3><div class="usage"><code>(distri formulas dis)</code></div><pre class="doc">Gets a list of formulas and a disjunction and returns a disjunction of 
+conjunctions
+
+f.e.: '(a b c),'(or d e f) |-&gt; (or (and d a b c) (and e a b c) (and f a b c))
+it us used as a single application of the distributive law, where the 
+elements of the list of formulas as well as the disjunction were operands 
+of a conjunction</pre></div><div class="public" id="var-distributive-conversion"><h3>distributive-conversion</h3><div class="usage"><code>(distributive-conversion formula)</code></div><pre class="doc">Uses distributiv law to bring inner disjunctions to an outer level
+It works recursively, where nested expressions are converted from inside to 
+outside after every conversion, a simplification through the associative law 
+is used</pre></div><div class="public" id="var-dnf%3F"><h3>dnf?</h3><div class="usage"><code>(dnf? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-equivalence-conversion"><h3>equivalence-conversion</h3><div class="usage"><code>(equivalence-conversion formula)</code></div><pre class="doc">formula -&gt; formula
+
+Returns a formula, where every occurence of an 
+implication is substituted a=&gt;b -&gt; (not a) or b
+</pre></div><div class="public" id="var-equivalence%3F"><h3>equivalence?</h3><div class="usage"><code>(equivalence? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-exception%3F"><h3>exception?</h3><div class="usage"><code>(exception? formula)</code></div><pre class="doc">Returns true if the formula is an exception
+</pre></div><div class="public" id="var-extliteral%3F"><h3>extliteral?</h3><div class="usage"><code>(extliteral? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-extliterals*%3F"><h3>extliterals*?</h3><div class="usage"><code>(extliterals*? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-formula%3F"><h3>formula?</h3><div class="usage"><code>(formula? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-formulas*%3F"><h3>formulas*?</h3><div class="usage"><code>(formulas*? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-implication-conversion"><h3>implication-conversion</h3><div class="usage"><code>(implication-conversion formula)</code></div><pre class="doc">Gets a formula and returns a formula, where every occurence of an
+implication is substituted
+a=&gt;b -&gt; (not a) or b</pre></div><div class="public" id="var-implication%3F"><h3>implication?</h3><div class="usage"><code>(implication? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-lconjunction%3F"><h3>lconjunction?</h3><div class="usage"><code>(lconjunction? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-literal%3F"><h3>literal?</h3><div class="usage"><code>(literal? formula)</code></div><pre class="doc">Returns true if the formula is a literal
+</pre></div><div class="public" id="var-literals*%3F"><h3>literals*?</h3><div class="usage"><code>(literals*? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div><div class="public" id="var-negate"><h3>negate</h3><div class="usage"><code>(negate formula)</code></div><pre class="doc">formula -&gt; formula
+
+Returns a negated formula</pre></div><div class="public" id="var-negation-conversion"><h3>negation-conversion</h3><div class="usage"><code>(negation-conversion formula)</code></div><pre class="doc">formula -&gt; formula
+
+the resulting formula has negations only in literals
+</pre></div><div class="public" id="var-negation%3F"><h3>negation?</h3><div class="usage"><code>(negation? formula)</code></div><pre class="doc">formula -&gt; bool
+</pre></div></div></body></html>
