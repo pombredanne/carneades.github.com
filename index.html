@@ -31,13 +31,15 @@
 	
 	<div id="sidebarContainer"><!-- Start Sidebar wrapper -->
 		<div id="navcontainer"><!-- Start Navigation -->
-			<ul><li><a href="index.html" rel="self" id="current">Home</a></li><li><a href="contact/index.html" rel="self">Contact</a></li><li><a href="changes/index.html" rel="self">Change Log</a></li><li><a href="examples/index.html" rel="self">Examples</a></li><li><a href="page2/page2.html" rel="self">Team</a></li></ul>
+			<ul><li><a href="index.html" rel="self" id="current">Home</a></li><li><a href="contact/index.html" rel="self">Contact</a></li><li><a href="changes/index.html" rel="self">Change Log</a></li><li><a href="page2/page2.html" rel="self">Team</a></li></ul>
 		</div><!-- End navigation --> 
 		<div id="sidebar"><!-- Start sidebar content -->
 			<h1 class="sideHeader">Links</h1><!-- Sidebar header -->
 			<a href="https://github.com/carneades/carneades/downloads">Downloads</a><br/>
 
 <a href="https://github.com/carneades/carneades">GIT Repository</a><br/>
+
+<a href="https://carneades.github.com/doc/api">API Documentation</a>
 
 <a href="http://www.tfgordon.de/publications">Publications</a><!-- sidebar content you enter in the page inspector -->
 			 <!-- sidebar content such as the blog archive links -->
@@ -46,27 +48,86 @@
 	
 	<div id="contentContainer"><!-- Start main content wrapper -->
 		<div id="content"><!-- Start content -->
-			<p>Carneades is an argument mapping and evaluation application, with a graphical user interface, and a software library for building applications supporting various argumentation tasks.</p>
+			<p>Version 2.x of the Carneades argumentation system provides web-based, collaborative software tools for:</p>
 
-<center><img src="resources/Home/screenshot1.png" alt="Carneades Editor Screen Shot" width="450"/></center>
+<ul>
+<li>summarizing the arguments of a debate in an <b>argument graph</b></li>
+<li>visualizing, browsing and navigating argument graphs</li>
+<li>critically evaluating arguments</li>
+<li>forming opinions, participating in polls and ranking stakeholders by the degree to which they share your views</li>
+<li>obtaining clear explanations, using argument graphs, of the different effects of alternative policies in particular cases</li>
+</ul>
+  
+<center><img src="resources/Home/map1.png" alt="Carneades Editor Screen Shot" width="450"/></center>
 
-<p>The latest version of the Carneades, currently under development, is implemented in a functional style using <a href="http://clojure.org">Clojure</a> and is thus portable to all platforms with a <a href="http://en.wikipedia.org/wiki/Java_Virtual_Machine">Java Virtual Machine</a> (JVM).
+<p>Carneades is Open Source software licensed under the <a href="http://ec.europa.eu/idabc/en/document/7774.html">European Union Public License</a> (EUPL v1.1), which is compatible with the GNU GPL (version 2), and the Eclipse Public License (verision 1.0), among others.</p>
 
-<p>Carneades provides tools supporting a variety of argumentation tasks, including:</p>
+<h2>Documentation</h2>
+
+<p>A <a href="https://github.com/carneades/carneades/tree/master/doc/manual/out">draft user manual</a> is available  in various formats.</a>
+
+<p>For programmers, online documentation of the <a href="http://carneades.github.com/doc/api">Carneades APIs</a> is also available.</p>
+
+<h2>Getting Started</h2>
+
+<p>Prerequisites:</p>
+
+<ul>
+<li>Version 7 or better of a <a href="http://www.oracle.com/technetwork/java/javase/donloads/index.html">Java Runtime Environment (JRE 7)</a>.
+<li>A recent version of a standards-compliant Web Browser (e.g. Firefox, Chrome, Safari).</li>
+</ul>
+
+<p>To download, install and run the Carneades Web Application<p>
 
 <ol>
-<li>argument construction from conceptual models (ontologies), defeasible rules and argumentation schemes</li>
-<li>argument evaluation, using proof burdens and standards and a model of the audience</li>
-<li>finding positions to support claims, using abduction</li>
-<li>argument mapping and visualization</li>
-<li>argument interchange in XML, using the <a href="resources/Home/LKIF-Specification.pdf">Legal Knowledge Interchange Format</a> (LKIF)</li>
+<li>Download the <a href="">carneades-webapp.zip</a> file.</li>
+<li>Unzip the carneades-webapp.zip file.</li>
+<li>Change to the carneades-webapp directory.</li>
+<li>Double click on the carneades-webapp.jar file.</li>
+<li>Alteratively, execute the following command line:<br/>
+
+   <code>$ java -jar carneades-webapp.jar</code>
+</li>
+<li>The server will be start and open the home page of the Carneades client in your web browser.</li>
+<li>If the home page fails to open, enter this URL into the address bar of your web browser:<br/>
+<code>http://localhost:8080/policymodellingtool/home.html</code>
+</li>
+<li>To shutdown the server you may need to end the Java task using your task manager,
+   depending on your operating system.  If you started the server from the command line,
+   you can kill the process with Control-C on Unix machines, including Macs.  If you
+   started the server on a Mac by double clicking on the jar file, you can shutdown the 
+   server by quitting the "routes_selfexe" application in the usual way, with Command-Q.</li>
 </ol>
 
-<p>The argument construction module uses resource-bounded heuristic strategies to search the space of arguments induced by a set of computational models of various argumentation schemes. &nbsp;Several heuristic search strategies are available, "out of the box".  The system includes a simple API for extending the system with computational models of other argumentation schemes. &nbsp;Any number of argumentation schemes may be used together, making Carneades an open architecture for hybrid reasoning.</p>
+<h2>System Architecture</h2>
 
-<p>Development of Carneades has been funded in part by the <a href="http://www.estrellaproject.org/index.php">ESTRELLA</a> (IST-2004-027655) and <a href="http://www.policy-impact.eu">IMPACT</a> (IST-2009-247228) European research projects.  Work on earlier version of the graphical user interface was funded in part by Google in 2008, as part of its Summer of Code program.  The latest version of the graphical user interface, currently under development, was funded by a project with <a href="http://www.dougwalton.ca/">Douglas Walton</a> from a grant by the Social Sciences and Humanities Research Council of Canada.</p>
+<p>Carneades 2.x is a Web application with a three-tiered architecture consisting of a relational database backend layer, an application logic layer and a graphical user interface layer. (The previous version of Carneades, a desktop application called the <a href="https://github.com/downloads/carneades/carneades/carneades-editor-1.0.2.jar">Carneades Editor</a>, is still available in the downloads section.)</p>
 
-<p>Carneades is Open Source software licensed under the <a href="http://www.osor.eu/eupl/european-union-public-licence-eupl-v.1.1">European Union Public License</a> (EUPL v1.1), which is compatible with the GNU GPL (version 2), and the Eclipse Public License (verision 1.0), among others.</p>
+<p>The server-side of Carneades is implemented in the <a href="http://clojure.org">Clojure</a> dialect of Lisp, which is compiled to bytecode for the Java Virtual Machine (JVM).  A RESTful web service provides Internet access to the application logic.  Data is interchanged between the server and clients using the JavaScript Object Notation (JSON).</p>
+
+<p>The client-side is implemented as a Rich Internet Application (RIA) using W3C standards, in particular Asynchronous JavaScript and XML (Ajax). The graphical user interface of the web client is implemented using the jQuery JavaScript library. 
+
+<p>The web-based version of Carneades was developed in the European <a href="http://www.policy-impact.eu/">IMPACT governance and policy modeling project</a>. The following modifications and extensions of Carneades were realized in the IMPACT project:
+
+<ul>
+<li>Carneades was first ported from Scheme to Clojure, another Lisp dialect, to enable it to run on the Java Virtual Machine and make use of the extensive set of available Java libraries, for example for interacting with databases via the Java Database Connectivity library (JDBC) and for implementing web services and applications.</li>
+
+<li>Next we have refactored Carneades to more cleanly separate its modules for argument construction and argument evaluation. It is now easier to implement and "plug in" modules for other computational models of structured argument.</li>
+
+<li>To validate this architecture we developed an evaluator for argument graphs via a mapping to Dung abstract argumentation frameworks [Dung, 1995], inspired by ASPIC+ [Prakken, 2010a], but extended to support the feaures of Carnades for handling proof burdens and standards [Gordon, Prakken, and Walton, 2007a]. This new evaluator can now handle cyclic argument graphs. Currently grounded semantics has been implemented, but the system has been designed to be easily extensible to support any Dung semantics.</li>
+	
+<li>We have designed and implemented a Domain Specific Language (DSL) in Clojure for visualising directed graphs, similar to the "dot" language used by the Graphviz system [Ellson, 2001], called <a href="https://github.com/pallix/lacij">LACIJ</a>, for the purpose of generating visualisations of argument graphs for the Web, using the Structured Vector Graphics (SVG) web standard for 2D vector graphics. This language is used to visualize argument graphs in the policy modeling tool.</li>
+	
+<li>A new XML format for interchanging arguments, called the Carneades Argument Format (CAF), has been developed. CAF is based on the argument graph portion of the Legal Knowledge Interchange Format (LKIF) developed in the ESTRELLA project, but has been extended to provide better support for metadata about the sources of arguments and simplified by omitting the parts of LKIF for representing rules.  Metadata is represented using the <a href="http://dublincore.org/"> Dublin Core Metadata Element Set</a>. By design, CAF is isomorphic to the abstract computational (algebraic) model of Carneades argument graphs and is intended to be used to represent and serialize argument graphs in a portable fashion. In CAF, every argument and statement node of an argument graph is assigned a globally unique Universal Resource Name (<a href="http://en.wikipedia.org/wiki/Uniform_resource_name">URN</a>), to enable statements and arguments to preserve their identity when argument graphs are transported across system boundaries.
+	
+<li>Argumentation schemes and policies are represented in a new Domain Specific Language (DSL) for defeasible inference rules, based on Clojure symbolic expression (<a href="http://en.wikipedia.org/wiki/S-expression">S-Expressions</a>).  The language provides a way to specify templates for translating formulas into positive or negative assertions, as well as questions, in several natural languages, as required to support European policy debates. The language facilitates the isomorphic modelling of legislation, as a hierarchy of sections.  Rules ("schemes") can be included at every level of the hierarchy.  Metadata, using the Dublin core attributes, can be associated with the rulebase as a whole, as well as each section and scheme. This metadata also enables links to the original legal sources to be included within the model.</li>
+
+<li>A relational database backend for storing and managing argument graphs has been developed. The database schema is isomorphic to CAF (and thus the algebraic model presented in the "Argument Graphs" chapter of this report), to enable CAF files to be imported into a database, and exported from a database, with no loss of information.</li>
+</ul>
+
+<h2>Acknowledgements</h2>
+
+<p>Development of Carneades has been funded in part by the <a href="http://www.estrellaproject.org/index.php">ESTRELLA</a> (IST-2004-027655) and <a href="http://www.policy-impact.eu">IMPACT</a> (IST-2009-247228) European research projects.  Work on earlier version of the graphical user interface was funded in part by Google in 2008, as part of its Summer of Code program.  The graphical user interface of the previous, desktop verison of Carneades (Version 1.0.2) was funded by a project with <a href="http://www.dougwalton.ca/">Douglas Walton</a> from a grant by the Social Sciences and Humanities Research Council of Canada.</p>
 
 
 		</div><!-- End content -->
@@ -78,7 +139,7 @@
 		<div id="breadcrumbcontainer"><!-- Start the breadcrumb wrapper -->
 			<ul><li><a href="index.html">Home</a>&nbsp;>&nbsp;</li></ul>
 		</div><!-- End breadcrumb -->
-		<p>Copyright &copy; 2008-2011 by Tom Gordon</p>
+		<p>Copyright &copy; 2008-2012 by Tom Gordon</p>
 	</div><!-- End Footer -->
 
 </div><!-- End container -->
