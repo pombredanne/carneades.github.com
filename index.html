@@ -39,7 +39,7 @@
 
 <a href="https://github.com/carneades/carneades">GIT Repository</a><br/>
 
-<a href="https://carneades.github.com/doc/api">API Documentation</a>
+<a href="http://carneades.github.com/doc/api">API Documentation</a><br/>
 
 <a href="http://www.tfgordon.de/publications">Publications</a><!-- sidebar content you enter in the page inspector -->
 			 <!-- sidebar content such as the blog archive links -->
@@ -60,11 +60,25 @@
   
 <center><img src="resources/Home/map1.png" alt="Carneades Editor Screen Shot" width="450"/></center>
 
+<h2>New Features of Version 2.0</h2>
+
+<p>Carneades 2.x is a Web application with a three-tiered architecture consisting of a relational database backend layer, an application logic layer and a graphical user interface layer. (The previous version of Carneades, a desktop application called the Carneades Editor, is still available in the <a href="https://github.com/carneades/carneades/downloads">downloads</a> section.)</p>
+
+<ul>
+<li>Now a multiuser Web application, with a three-tier architecture, including a relational database backend.</li>
+<li>New argument evaluator, based on ASPIC+ and Dung abstract argumentation frameworks.  Cyclic argument graphs are now handled.</li>
+<li>Argument maps are now represented for the Web using Structured Vector Graphics (SVG)</li>
+<li>New XML format for exporting and interchanging argument graphs, called the Carneades Argument Format (CAF). </li>
+<li>New rule language, based on Lisp s-expressions, for representing policies and argumentation schemes. </li>
+</ul>
+
+<p>CAF and the new rule language replace the use in Carneades of the Legal Knowledge Interchange Format (LKIF) from the ESTRELLA project.</p>
+
 <p>Carneades is Open Source software licensed under the <a href="http://ec.europa.eu/idabc/en/document/7774.html">European Union Public License</a> (EUPL v1.1), which is compatible with the GNU GPL (version 2), and the Eclipse Public License (verision 1.0), among others.</p>
 
 <h2>Documentation</h2>
 
-<p>A <a href="https://github.com/carneades/carneades/tree/master/doc/manual/out">draft user manual</a> is available  in various formats.</a>
+<p>A <a href="https://github.com/carneades/carneades/blob/master/doc/manual/out/manual.pdf?raw=truet">draft user manual</a> is available (PDF).</a>
 
 <p>For programmers, online documentation of the <a href="http://carneades.github.com/doc/api">Carneades APIs</a> is also available.</p>
 
@@ -80,7 +94,7 @@
 <p>To download, install and run the Carneades Web Application<p>
 
 <ol>
-<li>Download the <a href="">carneades-webapp.zip</a> file.</li>
+<li>Download the <code>carneades-webapp.zip</code> file from the <a href="https://github.com/carneades/carneades/downloads">downloads</a> section.</li>
 <li>Unzip the carneades-webapp.zip file.</li>
 <li>Change to the carneades-webapp directory.</li>
 <li>Double click on the carneades-webapp.jar file.</li>
@@ -99,31 +113,8 @@
    server by quitting the "routes_selfexe" application in the usual way, with Command-Q.</li>
 </ol>
 
-<h2>System Architecture</h2>
 
-<p>Carneades 2.x is a Web application with a three-tiered architecture consisting of a relational database backend layer, an application logic layer and a graphical user interface layer. (The previous version of Carneades, a desktop application called the <a href="https://github.com/downloads/carneades/carneades/carneades-editor-1.0.2.jar">Carneades Editor</a>, is still available in the downloads section.)</p>
 
-<p>The server-side of Carneades is implemented in the <a href="http://clojure.org">Clojure</a> dialect of Lisp, which is compiled to bytecode for the Java Virtual Machine (JVM).  A RESTful web service provides Internet access to the application logic.  Data is interchanged between the server and clients using the JavaScript Object Notation (JSON).</p>
-
-<p>The client-side is implemented as a Rich Internet Application (RIA) using W3C standards, in particular Asynchronous JavaScript and XML (Ajax). The graphical user interface of the web client is implemented using the jQuery JavaScript library. 
-
-<p>The web-based version of Carneades was developed in the European <a href="http://www.policy-impact.eu/">IMPACT governance and policy modeling project</a>. The following modifications and extensions of Carneades were realized in the IMPACT project:
-
-<ul>
-<li>Carneades was first ported from Scheme to Clojure, another Lisp dialect, to enable it to run on the Java Virtual Machine and make use of the extensive set of available Java libraries, for example for interacting with databases via the Java Database Connectivity library (JDBC) and for implementing web services and applications.</li>
-
-<li>Next we have refactored Carneades to more cleanly separate its modules for argument construction and argument evaluation. It is now easier to implement and "plug in" modules for other computational models of structured argument.</li>
-
-<li>To validate this architecture we developed an evaluator for argument graphs via a mapping to Dung abstract argumentation frameworks [Dung, 1995], inspired by ASPIC+ [Prakken, 2010a], but extended to support the feaures of Carnades for handling proof burdens and standards [Gordon, Prakken, and Walton, 2007a]. This new evaluator can now handle cyclic argument graphs. Currently grounded semantics has been implemented, but the system has been designed to be easily extensible to support any Dung semantics.</li>
-	
-<li>We have designed and implemented a Domain Specific Language (DSL) in Clojure for visualising directed graphs, similar to the "dot" language used by the Graphviz system [Ellson, 2001], called <a href="https://github.com/pallix/lacij">LACIJ</a>, for the purpose of generating visualisations of argument graphs for the Web, using the Structured Vector Graphics (SVG) web standard for 2D vector graphics. This language is used to visualize argument graphs in the policy modeling tool.</li>
-	
-<li>A new XML format for interchanging arguments, called the Carneades Argument Format (CAF), has been developed. CAF is based on the argument graph portion of the Legal Knowledge Interchange Format (LKIF) developed in the ESTRELLA project, but has been extended to provide better support for metadata about the sources of arguments and simplified by omitting the parts of LKIF for representing rules.  Metadata is represented using the <a href="http://dublincore.org/"> Dublin Core Metadata Element Set</a>. By design, CAF is isomorphic to the abstract computational (algebraic) model of Carneades argument graphs and is intended to be used to represent and serialize argument graphs in a portable fashion. In CAF, every argument and statement node of an argument graph is assigned a globally unique Universal Resource Name (<a href="http://en.wikipedia.org/wiki/Uniform_resource_name">URN</a>), to enable statements and arguments to preserve their identity when argument graphs are transported across system boundaries.
-	
-<li>Argumentation schemes and policies are represented in a new Domain Specific Language (DSL) for defeasible inference rules, based on Clojure symbolic expression (<a href="http://en.wikipedia.org/wiki/S-expression">S-Expressions</a>).  The language provides a way to specify templates for translating formulas into positive or negative assertions, as well as questions, in several natural languages, as required to support European policy debates. The language facilitates the isomorphic modelling of legislation, as a hierarchy of sections.  Rules ("schemes") can be included at every level of the hierarchy.  Metadata, using the Dublin core attributes, can be associated with the rulebase as a whole, as well as each section and scheme. This metadata also enables links to the original legal sources to be included within the model.</li>
-
-<li>A relational database backend for storing and managing argument graphs has been developed. The database schema is isomorphic to CAF (and thus the algebraic model presented in the "Argument Graphs" chapter of this report), to enable CAF files to be imported into a database, and exported from a database, with no loss of information.</li>
-</ul>
 
 <h2>Acknowledgements</h2>
 
